@@ -1,0 +1,80 @@
+.tx-browser-pi1 table.cal {
+  border-spacing:0;
+}
+.tx-browser-pi1 .listview table.cal {
+  width:100%
+}
+.tx-browser-pi1 .cal caption {
+  display:none;
+}
+
+.tx-browser-pi1 .singleview h1 {
+  margin-bottom:0;
+}
+.tx-browser-pi1 .singleview .cal th {
+  text-align:left;
+  padding:.2em 1em .2em .2em;
+}
+.tx-browser-pi1 .singleview .cal td {
+  padding:.2em;
+}
+/*.tx-browser-pi1 .singleview .cal th,
+.tx-browser-pi1 .cal td {
+  background:#eee;
+}
+.tx-browser-pi1 .singleview .cal  tr.odd th,
+.tx-browser-pi1 .cal tr.odd td {
+  background:white;
+}*/
+.tx-browser-pi1 .listview .cal th,
+.tx-browser-pi1 .listview .cal td {
+  width:86%;
+}
+.tx-browser-pi1 .listview .cal th.first,
+.tx-browser-pi1 .listview .cal td.first {
+  border-right:none;
+  text-align:center;
+  width:14%;
+}
+.tx-browser-pi1 .listview-11081301 .cal th,
+.tx-browser-pi1 .listview-11081301 .cal td {
+  width:21.5%;
+}
+.tx-browser-pi1 .listview-11081301 .cal th.first,
+.tx-browser-pi1 .listview-11081301 .cal td.first {
+  border-right:none;
+  text-align:center;
+  width:14%;
+}
+.tx-browser-pi1 .listview .cal th,
+.tx-browser-pi1 .listview .cal td {
+  border-right:1px dotted #aaa;
+}
+.tx-browser-pi1 .listview .cal th.last,
+.tx-browser-pi1 .listview .cal td.last {
+  border-right:none;
+}
+
+.tx-browser-pi1 .listview .cal td.date div {
+  float:left;
+  position:relative;
+  text-align:center;
+}
+.tx-browser-pi1 .listview .cal td.date a,
+.tx-browser-pi1 .listview .cal td.date a:link,
+.tx-browser-pi1 .listview .cal td.date a:visited {
+  color:white;
+  font-weight:normal;
+}
+.tx-browser-pi1 .listview .cal td.date a:active,
+.tx-browser-pi1 .listview .cal td.date a:focus,
+.tx-browser-pi1 .listview .cal td.date a:hover {
+  font-weight:normal;
+  text-decoration:underline;
+}
+.tx-browser-pi1 ul.modeSelector li {
+  padding:0 0.6em;
+}
+.tx-browser-pi1 ul.modeSelector li.selected {
+  background:white;
+}

@@ -1,0 +1,885 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      11081301: Organiser +npz.ch
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+
+
+plugin.tx_browser_pi1 {
+
+  template {
+    extensions {
+      org {
+        npzch {
+          name      = Organiser +npz.ch
+          file      = EXT:org_npzch/res/html/npzch/11081301/default.tmpl
+          csvViews  = 11081301, 11081302, 11081303, 11081304, 11081305, 11081306
+        }
+        npzch_export {
+          name      = Organiser +npz.ch CSV export
+          file      = EXT:org_npzch/res/html/npzch/11083001/default.tmpl
+          csvViews  = 11083001
+        }
+        calendar          >
+        calendar_margin   >
+        department        >
+        headquarters      >
+        locations         >
+        news              >
+        news_margin       >
+        staff             >
+        staff_margin      >
+      }
+    }
+  }
+
+  marker {
+    npz_title_date = COA
+    npz_title_date {
+        // No date is given: take the current date
+      10 = TEXT
+      10 {
+        if {
+          isFalse {
+            data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+          }
+        }
+        data        = date: U
+        strftime    = %A, %d.%m.%Y
+        noTrimWrap  = |<h1>Belegungsplan |</h1>|
+      }
+        // Date is given
+      20 = TEXT
+      20 {
+        if {
+          isTrue {
+            data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+          }
+        }
+        data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+        strftime    = %A, %d.%m.%Y
+        noTrimWrap  = |<h1>Belegungsplan |</h1>|
+      }
+      30 = TEXT
+      30 {
+        value   = Overview
+        lang.de = &Uuml;bersicht
+        wrap    = <h2>|</h2>
+      }
+    }
+  }
+
+  javascript {
+    jquery {
+      pi5 {
+        org_npzch {
+            // [STRING] Path to the jss file of the calendar plugin.
+          slide = EXT:org_npzch/res/js/slide-0.0.3.js
+          slide {
+              // [Boolean] 0 (default): link to the script file, 1: include the script inline
+            inline = 1
+          }
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      101 >
+      111 >
+      201 >
+      211 >
+      401 >
+      411 >
+      501 >
+      601 >
+      701 >
+      11081301 = Organiser +npz.ch
+      11081301 {
+        name    = Organiser +npz.ch
+        showUid = npzchUid
+        flexform {
+          pi5 < plugin.tx_browser_pi1.flexform.pi5
+          pi5 {
+            day {
+              schedule {
+                group {
+                  10 {
+                    tableField  = tx_org_npzch_place.uid
+                    value       = {$plugin.tx_org_npzch_place.group_1.uid}
+                    label {
+                      stdWrap = TEXT
+                      stdWrap {
+                        value   = {$plugin.tx_org_npzch_place.group_1.lang.en}
+                        lang.de = {$plugin.tx_org_npzch_place.group_1.lang.de}
+                      }
+                    }
+                  }
+                  20 {
+                    tableField  = tx_org_npzch_place.uid
+                    value       = {$plugin.tx_org_npzch_place.group_2.uid}
+                    label {
+                      stdWrap = TEXT
+                      stdWrap {
+                        value   = {$plugin.tx_org_npzch_place.group_2.lang.en}
+                        lang.de = {$plugin.tx_org_npzch_place.group_2.lang.de}
+                      }
+                    }
+                  }
+                  30 {
+                    tableField  = tx_org_npzch_place.uid
+                    value       = {$plugin.tx_org_npzch_place.group_3.uid}
+                    label {
+                      stdWrap = TEXT
+                      stdWrap {
+                        value   = {$plugin.tx_org_npzch_place.group_3.lang.en}
+                        lang.de = {$plugin.tx_org_npzch_place.group_3.lang.de}
+                      }
+                    }
+                  }
+                  40 {
+                    tableField  = tx_org_npzch_place.uid
+                    value       = {$plugin.tx_org_npzch_place.group_4.uid}
+                    label {
+                      stdWrap = TEXT
+                      stdWrap {
+                        value   = {$plugin.tx_org_npzch_place.group_4.lang.en}
+                        lang.de = {$plugin.tx_org_npzch_place.group_4.lang.de}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        marker < plugin.tx_browser_pi1.marker
+        select (
+          tx_org_npzch.title,
+          tx_org_npzch.type,
+          tx_org_npzch.datetime_start,
+          tx_org_npzch.datetime_end,
+          tx_org_npzch_place.title,
+          tx_org_npzch_place.uid,
+          tx_org_npzch_capacity.value,
+          tx_org_npzch_cat.short,
+          fe_users.first_name,
+          fe_users.last_name,
+          fe_users.telephone
+        )
+        andWhere = COA
+        andWhere {
+          10 = TEXT
+          10 {
+            if {
+              isFalse {
+                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+              }
+            }
+            value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(CONCAT(CURDATE(),' 00:00:00'))
+            noTrimWrap  = | | |
+          }
+        }
+        orderBy = tx_org_npzch.datetime_start ASC
+        tx_org_npzch {
+          datetime_start = TEXT
+          datetime_start {
+            value     = ###TX_ORG_NPZCH.DATETIME_START###
+            strftime  = %H:%M
+          }
+          datetime_end = TEXT
+          datetime_end {
+            value     = ###TX_ORG_NPZCH.DATETIME_END###
+            strftime  = %H:%M
+          }
+          type = COA
+          type {
+              // Booked
+            10 = COA
+            10 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = 0
+              }
+                // Category is given
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+                // Category isn't given
+              20 = TEXT
+              20 {
+                if {
+                  isFalse = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = &Oslash;
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+              wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
+            }
+              // Reserved
+            20 = COA
+            20 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = reserved
+              }
+                // Category is given
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+                // Category isn't given
+              20 = TEXT
+              20 {
+                if {
+                  isFalse = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = &Oslash;
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+              wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
+            }
+              // Canceled
+            30 = COA
+            30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+                // Category is given
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+                // Category isn't given
+              20 = TEXT
+              20 {
+                if {
+                  isFalse = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = &Oslash;
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "<h4>###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###</h4><p>###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###</p>"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
+              }
+              wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
+            }
+          }
+        }
+        filter {
+          tx_org_npzch {
+            datetime_start < plugin.tx_browser_pi1.displayList.master_templates.category_menu
+            datetime_start {
+              first_item = 0
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = day
+                  day {
+                    url_stdWrap {
+                      strftime >
+                    }
+                  }
+                }
+              }
+              wrap = <span class="category_menu">|</span>
+              wrap {
+                item {
+                  display_without_any_hit = 1
+                  display_hits = 0
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                  }
+                }
+              }
+              order.field = uid
+            }
+          }
+        }
+      }
+      11081302 < .11081301
+      11081302 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_1.lang.de}
+      11081302 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_1.lang.de}
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_1.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_1.lang.de}
+                    }
+                  }
+                }
+                group >
+              }
+            }
+          }
+        }
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_1.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_1.lang.de}
+            }
+          }
+        }
+        andWhere {
+            // Add an AND, if .10 isn't set
+          11 = TEXT
+          11 {
+            if {
+              isFalse {
+                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+              }
+            }
+            value = AND
+          }
+            // Uid of the place
+          20 = TEXT
+          20 {
+            value       = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_1.uid}
+            noTrimWrap  = | ||
+          }
+        }
+        tx_org_npzch {
+          type {
+            10 {
+              10 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+              20 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+            }
+            20 {
+              10 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+              20 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+            }
+            30 {
+              10 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+              20 {
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+              }
+            }
+          }
+        }
+      }
+      11081303 < .11081302
+      11081303 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_2.lang.de}
+      11081303 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_2.lang.de}
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_2.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_2.lang.de}
+            }
+          }
+        }
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_2.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_2.lang.de}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        andWhere {
+          20 {
+            value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_2.uid}
+          }
+        }
+      }
+      11081304 < .11081302
+      11081304 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_3.lang.de}
+      11081304 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_3.lang.de}
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_3.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_3.lang.de}
+            }
+          }
+        }
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_3.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_3.lang.de}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        andWhere {
+          20 {
+            value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_3.uid}
+          }
+        }
+      }
+      11081305 < .11081302
+      11081305 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_4.lang.de}
+      11081305 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_4.lang.de}
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_4.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_4.lang.de}
+            }
+          }
+        }
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_4.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_4.lang.de}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        andWhere {
+          20 {
+            value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_4.uid}
+          }
+        }
+      }
+      11081306 < .11081302
+      11081306 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_5.lang.de}
+      11081306 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_5.lang.de}
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_5.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_5.lang.de}
+            }
+          }
+        }
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_5.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_5.lang.de}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        andWhere {
+          20 {
+            value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_5.uid}
+          }
+        }
+      }
+      11083001 = Organiser +npz.ch CSV export
+      11083001 {
+        name    = Organiser +npz.ch CSV export
+        showUid = npzchUid
+        select (
+          tx_org_npzch.type,
+          tx_org_npzch.title,
+          tx_org_npzch.short,
+          tx_org_npzch.occasion,
+          tx_org_npzch.datetime_start,
+          tx_org_npzch.datetime_end,
+          tx_org_npzch_place.title,
+          tx_org_npzch_capacity.value,
+          tx_org_npzch_cat.title,
+          fe_users.first_name,
+          fe_users.last_name,
+          fe_users.telephone
+        )
+        andWhere = COA
+        andWhere {
+          10 = TEXT
+          10 {
+            if {
+              isFalse {
+                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+              }
+            }
+            value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(DATE_SUB(DATE_FORMAT(CURDATE(), '%Y-%m-01 00:00:00'), INTERVAL 11 MONTH))
+            noTrimWrap  = | | |
+          }
+        }
+        orderBy = tx_org_npzch.datetime_start ASC
+        tx_org_npzch {
+          datetime_start = TEXT
+          datetime_start {
+            value     = ###TX_ORG_NPZCH.DATETIME_START###
+            strftime  = %d.%m.%y %H:%M:%S
+          }
+          datetime_end = TEXT
+          datetime_end {
+            value     = ###TX_ORG_NPZCH.DATETIME_END###
+            strftime  = %d.%m.%y %H:%M:%S
+          }
+          type = COA
+          type {
+              // Booked
+            10 = TEXT
+            10 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = 0
+              }
+              value = Gebucht
+            }
+              // Reserved
+            20 = TEXT
+            20 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = reserved
+              }
+              value = Reserviert
+            }
+              // Canceled
+            30 = TEXT
+            30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+              value = Storniert
+            }
+          }
+        }
+        filter {
+          tx_org_npzch {
+            datetime_start < plugin.tx_browser_pi1.displayList.master_templates.category_menu
+            datetime_start {
+              first_item = 1
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = month
+                  month {
+                    start_period {
+                      stdWrap {
+                        value = -11 month
+                      }
+                    }
+                    times_stdWrap {
+                      value = 12
+                    }
+                    value_stdWrap {
+                      strftime = %b
+                    }
+                  }
+                }
+              }
+              wrap = <span class="category_menu">|</span>
+              wrap {
+                item {
+                  display_without_any_hit = 1
+                  display_hits = 1
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                  }
+                }
+              }
+              order.field = uid
+            }
+          }
+        }
+      }
+    }
+    single {
+      101 >
+      111 >
+      201 >
+      211 >
+      401 >
+      411 >
+      501 >
+      601 >
+      701 >
+      11081301 = Organiser +npz.ch
+      11081301 {
+        select (
+          tx_org_npzch.title,
+          tx_org_npzch.short,
+          tx_org_npzch.occasion,
+          fe_users.first_name,
+          fe_users.last_name,
+          fe_users.telephone,
+          tx_org_npzch.type,
+          tx_org_npzch.datetime_start,
+          tx_org_npzch.datetime_end,
+          tx_org_npzch_place.title,
+          tx_org_npzch_capacity.title,
+          tx_org_npzch_cat.title
+        )
+        //orderBy = tx_org_cal_mm_calentrance.sorting, tx_org_calentrance.title
+        tx_org_npzch {
+          datetime_start = COA
+          datetime_start {
+            10 = TEXT
+            10 {
+              value     = ###TX_ORG_NPZCH.DATETIME_START###
+              strftime  = %a. %d. %b. %H:%M
+              wrap      = <div class="datetime_start">|</div>
+            }
+          }
+          datetime_end = COA
+          datetime_end {
+            10 = TEXT
+            10 {
+              value     = ###TX_ORG_NPZCH.DATETIME_END###
+              strftime  = %H:%M
+              wrap      = <div class="datetime_end">|</div>
+            }
+          }
+          type = COA
+          type {
+              // Booked
+            10 = TEXT
+            10 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = 0
+              }
+              value = Gebucht
+            }
+              // Reserved
+            20 = TEXT
+            20 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = reserved
+              }
+              value = Reserviert
+            }
+              // Canceled
+            30 = TEXT
+            30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+              value = Storniert
+            }
+          }
+        }
+      }
+      11081302 < .11081301
+      11081303 < .11081301
+      11081304 < .11081301
+      11081305 < .11081301
+      11081306 < .11081301
+      11083001 = Organiser +npz.ch CSV export
+      11083001 {
+        name    = Organiser +npz.ch CSV export
+        showUid = npzchUid
+        select (
+          tx_org_npzch.type,
+          tx_org_npzch.title,
+          tx_org_npzch.short,
+          tx_org_npzch.occasion,
+          tx_org_npzch.datetime_start,
+          tx_org_npzch.datetime_end,
+          tx_org_npzch_place.title,
+          tx_org_npzch_capacity.value,
+          tx_org_npzch_cat.title,
+          fe_users.first_name,
+          fe_users.last_name,
+          fe_users.telephone
+        )
+        tx_org_npzch {
+          datetime_start = TEXT
+          datetime_start {
+            value     = ###TX_ORG_NPZCH.DATETIME_START###
+            strftime  = %d.%m.%y %H:%M:%S
+          }
+          datetime_end = TEXT
+          datetime_end {
+            value     = ###TX_ORG_NPZCH.DATETIME_END###
+            strftime  = %d.%m.%y %H:%M:%S
+          }
+          type = COA
+          type {
+              // Booked
+            10 = TEXT
+            10 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = 0
+              }
+              value = Gebucht
+            }
+              // Reserved
+            20 = TEXT
+            20 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = reserved
+              }
+              value = Reserviert
+            }
+              // Canceled
+            30 = TEXT
+            30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+              value = Storniert
+            }
+          }
+        }
+      }
+    }
+  }
+
+  _LOCAL_LANG {
+    default {
+      list_mode_11081301            = All places
+      list_mode_11081302            = {$plugin.tx_org_npzch_place.group_1.lang.en}
+      list_mode_11081303            = {$plugin.tx_org_npzch_place.group_2.lang.en}
+      list_mode_11081304            = {$plugin.tx_org_npzch_place.group_3.lang.en}
+      list_mode_11081305            = {$plugin.tx_org_npzch_place.group_4.lang.en}
+      list_mode_11081306            = {$plugin.tx_org_npzch_place.group_5.lang.en}
+      list_mode_11081301_titleTag   = Organiser +npz.ch: bookings
+      list_mode_11081301_keywords   = TYPO3, Organiser +npz.ch, bookings
+      list_mode_11081301_summary    = TYPO3 Organiser +npz.ch: bookings
+      single_mode_11081301_titleTag = Organiser +npz.ch booking: ###FE_USERS:FIRST_NAME### ###FE_USERS:LAST_NAME### ###TX_ORG_NPZCH.TITLE###
+      single_mode_11081301_keywords = ###TX_ORG_NPZCH.KEYWORDS###
+      single_mode_11081301_summary  = ###TX_ORG_NPZCH.DESCRIPTION###
+      tx_org_npzch_capacity_value   = Capacity
+    }
+    de {
+      list_mode_11081301            = Alle Plätze
+      list_mode_11081302            = {$plugin.tx_org_npzch_place.group_1.lang.de}
+      list_mode_11081303            = {$plugin.tx_org_npzch_place.group_2.lang.de}
+      list_mode_11081304            = {$plugin.tx_org_npzch_place.group_3.lang.de}
+      list_mode_11081305            = {$plugin.tx_org_npzch_place.group_4.lang.de}
+      list_mode_11081306            = {$plugin.tx_org_npzch_place.group_5.lang.de}
+      list_mode_11081301_titleTag   = Organiser +npz.ch: Buchungen
+      list_mode_11081301_keywords   = TYPO3, Organiser +npz.ch, Buchungen
+      list_mode_11081301_summary    = TYPO3 Organiser +npz.ch: Buchungen
+      single_mode_11081301_titleTag = Organiser +npz.ch Buchungen: ###FE_USERS:FIRST_NAME### ###FE_USERS:LAST_NAME### ###TX_ORG_NPZCH.TITLE###
+      single_mode_11081301_keywords = ###TX_ORG_NPZCH.KEYWORDS###
+      single_mode_11081301_summary  = ###TX_ORG_NPZCH.DESCRIPTION###
+      tx_org_npzch_capacity_value   = Kapazität
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // page
+
+page {
+  config {
+    headerComment (
+          TYPO3-Programmierung: die-netzmacher.de
+    )
+  }
+  includeCSS {
+    org_npzch = EXT:org_npzch/res/html/npzch/11081301/default.css
+  }
+}
+  // page
+
+
+
+  ////////////////////////////////////////
+  //
+  // seite
+
+seite {
+  config {
+    headerComment (
+          TYPO3-Programmierung: die-netzmacher.de
+    )
+  }
+  includeCSS {
+    org_npzch = EXT:org_npzch/res/html/npzch/11081301/default.css
+  }
+}
+  // seite

@@ -1,0 +1,78 @@
+  ////////////////////////////////////////////////////////////////////////
+  //
+  // INDEX
+  // =====
+  //
+  // mod.web_list
+  // TCAdefaults
+
+
+
+  ////////////////////////////////////////////////////////////////////////
+  //
+  // mod.web_list
+
+mod {
+  web_list {
+    allowedNewTables (
+      tx_org_npzch,
+      tx_org_npzch_audience,
+      tx_org_npzch_cat,
+      tx_org_npzch_course,
+      tx_org_npzch_degree,
+      tx_org_npzch_focus,
+      tx_org_npzch_riskcycle,
+      tx_org_npzch_sector,
+      tx_org_npzch_type,
+      tx_org_tax
+    )
+  }
+}
+  // mod.web_list
+
+
+
+  ////////////////////////////////////////////////////////////////////////
+  //
+  // TCAdefaults
+
+TCAdefaults {
+  tx_org_npzch {
+      // 30: English
+    static_languages = 30
+      // 41: Switzerland
+    static_countries = 41
+      // 1: Yes
+    tx_org_npzch_type = 1
+  }
+}
+  // TCAdefaults
+
+
+
+  /////////////////////////////////////
+  //
+  // LINKHANDLER
+  // - mod.tx_linkhandler
+  // - RTE.default.tx_linkhandler
+
+
+
+  /////////////////////////////////////
+  //
+  // mod.tx_linkhandler
+
+mod.tx_linkhandler {
+  org_npzch {
+    label       = Org: +npz.ch
+    listTables  = tx_org_npzch
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
+    // onlyPids    = 1
+  }
+}
+  // mod.tx_linkhandler
+
+  // RTE.default.tx_linkhandler
+RTE.default.tx_linkhandler.org_npzch < mod.tx_linkhandler.org_npzch
+
+  // LINKHANDLER

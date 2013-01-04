@@ -1,0 +1,80 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // SEO - Search Engine Optimisation
+  //    page
+  // plugin.tx_linkhandler
+  // Header Comment
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // SEO - Search Engine Optimisation
+
+  //    npzchUid
+
+  // page
+[globalVar = GP:tx_browser_pi1|npzchUid > 0]
+  page {
+    config {
+      noPageTitle = 2
+    }
+    headerData {
+      20 = TEXT
+      20 {
+        data = register:browser_htmlTitleTag
+        ifEmpty {
+          field = title
+          noTrimWrap  = |Organiser +npz.ch: ||
+        }
+        wrap = <title>|</title>
+      }
+    }
+    meta {
+      description {
+        field >
+        data = register:browser_description
+      }
+      keywords {
+        field >
+        data = register:browser_keywords
+      }
+    }
+  }
+[global]
+  // page
+  // SEO - Search Engine Optimisation
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_linkhandler
+
+plugin.tx_linkhandler {
+  tx_org_npzch {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.npzch}
+    additionalParams = &tx_browser_pi1[npzchUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    } 
+  }
+}
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

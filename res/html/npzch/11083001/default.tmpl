@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <body>
+
+<!-- ###TEMPLATE_LIST### begin -->
+        <div class="ui-widget ui-corner-all">
+          <!-- ###LIST_TITLE### begin -->
+          ###MY_TITLE###
+          <!-- ###LIST_TITLE### end -->
+          <!-- ###SEARCHFORM### begin -->
+          <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-###VIEW###-###MODE###">
+            <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
+              <fieldset>
+                <legend>###MY_SEARCH_LEGEND###</legend>
+                <input type="hidden" name="no_cache" value="1" />
+                <input type="hidden" name="tx_browser_pi1[plugin]" value="###PLUGIN###" />
+                <input class="sword" type="text" name="tx_browser_pi1[sword]" onfocus="if(this.value =='###SWORD_DEFAULT###') this.value=''" value="###SWORD###" />
+                <input id="c###TT_CONTENT.UID###-list-submit-search-###MODE###" class="button hidesubmit"  type="submit" value="###MY_SEARCH###" />
+                <input class="button reset"       type="button" onclick="location='###MY_URL###'" value="###MY_RESET###" />
+                <!-- ###BUTTON_CSV-EXPORT### begin -->
+                <input id="c###TT_CONTENT.UID###-list-submit-csv-export-###MODE###" class="button hidesubmit"  type="submit"  value="###MY_CSV_EXPORT###" />
+                <!-- ###BUTTON_CSV-EXPORT### end -->
+                <!-- Add filters with the ###TABLE.FIELD### syntax and configure your filters with TypoScript -->
+                <div class="filter">
+                  ###TX_ORG_NPZCH.DATETIME_START###
+                </div>
+              </fieldset>
+            </form>
+            ###RESULTPHRASE###
+          </div><!-- ###SEARCHFORM### end -->
+          <div class="listarea">
+            <!-- ###LISTTABS### begin -->
+            <div id="c###TT_CONTENT.UID###-list-tabs-###MODE###" class="ui-tabs ui-tabs-list-###MODE### ui-widget ui-widget-content ui-corner-all">
+              <!-- ###CATEGORY_MENU### begin -->
+              <!-- Enable the subpart CATEGORY_MENU: Set plugin.tx_browser_pi1.displayList.display.category_menu = 1 -->
+              <div id="c###TT_CONTENT.UID###-list-category-menu-###MODE###" class="category_menu category_menu-###VIEW###-###MODE###">
+                <!-- Add a category_menu with the ###TABLE.FIELD### syntax and configure your category_menu like a filter with TypoScript -->
+              </div><!-- ###CATEGORY_MENU### end -->
+              <!-- ###AZSELECTOR### begin -->
+              <div id="c###TT_CONTENT.UID###-list-azSelector-###MODE###" class="azSelector azSelector-###UL_VIEW###-###UL_MODE###">
+                <ul class="azSelector azSelector-###UL_VIEW###-###UL_MODE###"><!-- ###AZSELECTORTABS### begin -->
+                  <li###LI_CLASS###>###TAB###</li><!-- ###AZSELECTORTABS### end -->
+                </ul>
+              </div><!-- ###AZSELECTOR### end -->
+              <!-- ###PAGEBROWSER### begin -->
+              <div id="c###TT_CONTENT.UID###-list-browsebox-###MODE###" class="browsebox browsebox-###VIEW###-###MODE###">
+                ###RESULT_AND_ITEMS###
+              </div><!-- ###PAGEBROWSER### end -->
+              <!-- ###MODESELECTOR### begin -->
+              <ul class="ui-tabs-nav ui-tabs-nav-list-###MODE### ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                <!-- ###MODESELECTORTABS### begin -->
+                <li id="c###TT_CONTENT.UID###-list-tab-###MODE###" class="ui-state-default ui-corner-top c###TT_CONTENT.UID###-list-tab###UI-STATE-ACTIVE######UI-TABS-SELECTED###">###TABS###</li>
+                <!-- ###MODESELECTORTABS### end -->
+              </ul>
+              <!-- ###MODESELECTOR### end -->
+              <!-- ###LISTVIEW### begin -->
+              <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-###MODE### ui-tabs-panel ui-widget-content ui-corner-bottom">
+                <!-- ###GROUPBY### begin -->
+                <!-- ###GROUPBYHEAD### begin -->
+                ###GROUPBY_GROUPNAME###
+                <!-- ###GROUPBYHEAD### end -->
+                <!-- ###GROUPBYBODY### begin -->
+                <table id="c###TT_CONTENT.UID###-listview-###MODE###-table" class="cal"###SUMMARY###>
+                  ###CAPTION###
+                  <!-- ###LISTHEAD### begin -->
+                  <thead>
+                    <tr>
+                      <!-- ###LISTHEADITEM### begin -->
+                      <th class="th_###TH_COUNTER### ###TH_EVEN_OR_ODD### ###TH_FIRST_LAST###">
+                        ###ITEM###
+                      </th>
+                      <!-- ###LISTHEADITEM### end -->
+                    </tr>
+                  </thead>
+                  <!-- ###LISTHEAD### end -->
+                  <!-- ###LISTBODY### begin -->
+                  <tbody>
+                    <tr class="tr_###TR_COUNTER### ###TR_EVEN_OR_ODD### ###TR_FIRST_LAST###">
+                      <!-- ###LISTBODYITEM### begin -->
+                      <td class="td_###TD_COUNTER### ###TD_EVEN_OR_ODD### ###TD_FIRST_LAST###">
+                        ###ITEM### ###SOCIALMEDIA_BOOKMARKS###
+                      </td>
+                      <!-- ###LISTBODYITEM### end -->
+                    </tr>
+                  </tbody>
+                  <!-- ###LISTBODY### end -->
+                </table>
+                <!-- ###GROUPBYBODY### end -->
+                <!-- ###GROUPBY### end -->
+              </div><!-- ###LISTVIEW### end -->
+            </div> <!-- /ui-tabs -->
+            <!-- ###LISTTABS### end -->
+          </div> <!-- /listarea -->
+        </div> <!-- /ui-widget -->
+<!-- ###TEMPLATE_LIST### end -->
+
+
+
+
+
+<!-- ###TEMPLATE_SINGLE### begin -->
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+<!-- ###MODESELECTOR### begin -->
+        <div id="c###TT_CONTENT.UID###-modeSelector-###VIEW###-###MODE###" class="modeSelector modeSelector-###VIEW###-###MODE###">
+          <ul class="modeSelector modeSelector-###VIEW###-###MODE###"><!-- ###MODESELECTORTABS### begin -->
+            <li###CLASS###>###TABS###</li><!-- ###MODESELECTORTABS### end -->
+          </ul>
+        </div><!-- ###MODESELECTOR### end --><!-- ###SINGLEVIEW### begin -->
+        <div id="c###TT_CONTENT.UID###-###VIEW###view-###MODE###" class="###VIEW###view ###VIEW###view-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <h1 class="ui-widget-header ui-corner-top">
+              ###TITLE###
+            </h1>
+            <div class="ui-widget-content ui-corner-bottom">
+              <table###SUMMARY###>
+                ###CAPTION###<!-- ###SINGLEBODY### begin -->
+                <tbody><!-- ###SINGLEBODYROW### begin -->
+                  <tr###CLASS###>
+                    <th>###FIELD###</th>
+                    <td>###VALUE### ###SOCIALMEDIA_BOOKMARKS###</td>
+                  </tr><!-- ###SINGLEBODYROW### end -->
+                </tbody><!-- ###SINGLEBODY### end -->
+              </table>
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+        <!-- ###SINGLEVIEW### end -->
+<!-- ###TEMPLATE_SINGLE### end -->
+
+
+
+<em>
+  Position of subpart markers is impportant for line beaks!
+</em>
+<!-- ###TEMPLATE_CSV### begin --><!-- ###LISTVIEW### begin --><!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
+<!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->###ITEM###<!-- ###LISTBODYITEM### end -->
+<!-- ###LISTBODY### end --><!-- ###LISTVIEW### end --><!-- ###TEMPLATE_CSV### end -->
+
+
+
+  </body>
+</html>

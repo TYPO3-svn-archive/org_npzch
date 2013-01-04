@@ -1,0 +1,94 @@
+plugin.tx_browser_pi1 {
+  views {
+    list {
+      11081301 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours {
+                10.value = #8e0005
+                20 >
+                30 >
+                40 >
+                50 >
+                60 >
+                70 >
+                80 >
+                90 >
+                100 >
+                110 >
+                120 >
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+plugin.tx_browser_pi1 {
+  views {
+    list {
+      11081302 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+      11081303 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+      11081304 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+      11081305 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+      11081306 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+      11083001 {
+        flexform {
+          pi5 {
+            sDEF {
+              colours < plugin.tx_browser_pi1.views.list.11081301.flexform.pi5.sDEF.colours
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

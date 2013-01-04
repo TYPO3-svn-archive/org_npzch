@@ -1,0 +1,9 @@
+plugin.org {
+
+  # cat=Organiser npz.ch/page/351; type=+int; label= page uid npzch:Uid of your npzch page
+  pages.npzch =
+
+  # cat=Organiser npz.ch/page/352; type=+int; label= sysfolder uid npzch:Uid of the sysfolder with the npzch data
+  sysfolder.npzch =
+
+}
