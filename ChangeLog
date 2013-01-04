@@ -2,11 +2,17 @@
   13-01-04
   Improvement
   * #00000: Improved comment
+            Effected files:
             * /res/js/
               * slide-0.0.2.js -> slide-0.0.3.js
             * static/npzch/11081301/setup.txt
   * #00000: extension manager
             * Do not suggest be_tablefilters any longer
+  Bugfix
+  * #44313: GPvar is not interpreted in some case
+            Cause: GPvar is deprecated. Use GP instead
+            Effected files:
+            * static/npzch/11081301/setup.txt
 
 1.0.1
   12-03-25

@@ -52,7 +52,7 @@ plugin.tx_browser_pi1 {
       10 {
         if {
           isFalse {
-            data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+            data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
           }
         }
         data        = date: U
@@ -64,10 +64,10 @@ plugin.tx_browser_pi1 {
       20 {
         if {
           isTrue {
-            data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+            data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
           }
         }
-        data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+        data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
         strftime    = %A, %d.%m.%Y
         noTrimWrap  = |<h1>Belegungsplan |</h1>|
       }
@@ -185,7 +185,7 @@ plugin.tx_browser_pi1 {
           10 {
             if {
               isFalse {
-                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+                data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
               }
             }
             value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(CONCAT(CURDATE(),' 00:00:00'))
@@ -374,7 +374,7 @@ plugin.tx_browser_pi1 {
           11 {
             if {
               isFalse {
-                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+                data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
               }
             }
             value = AND
@@ -575,7 +575,7 @@ plugin.tx_browser_pi1 {
           10 {
             if {
               isFalse {
-                data = GPvar:tx_browser_pi1|tx_org_npzch.datetime_start
+                data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
               }
             }
             value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(DATE_SUB(DATE_FORMAT(CURDATE(), '%Y-%m-01 00:00:00'), INTERVAL 11 MONTH))
