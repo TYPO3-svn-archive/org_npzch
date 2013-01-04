@@ -311,6 +311,8 @@ plugin.tx_browser_pi1 {
           tx_org_npzch {
             datetime_start < plugin.tx_browser_pi1.displayList.master_templates.category_menu
             datetime_start {
+                // 130104, dwildt
+              count_hits = 0
               first_item = 0
               area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
               area {
@@ -629,6 +631,8 @@ plugin.tx_browser_pi1 {
           tx_org_npzch {
             datetime_start < plugin.tx_browser_pi1.displayList.master_templates.category_menu
             datetime_start {
+                // 130104, dwildt
+              count_hits = 0
               first_item = 1
               area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
               area {
