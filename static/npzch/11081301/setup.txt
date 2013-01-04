@@ -85,7 +85,7 @@ plugin.tx_browser_pi1 {
       pi5 {
         org_npzch {
             // [STRING] Path to the jss file of the calendar plugin.
-          slide = EXT:org_npzch/res/js/slide-0.0.2.js
+          slide = EXT:org_npzch/res/js/slide-0.0.3.js
           slide {
               // [Boolean] 0 (default): link to the script file, 1: include the script inline
             inline = 1

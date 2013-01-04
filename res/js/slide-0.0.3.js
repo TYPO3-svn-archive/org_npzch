@@ -3,6 +3,9 @@
  * Skript für das automatiche Blättern von Tab zu Tab im TYPO3-Browser-Plugin
  * Copyright (c) 2011 Dirk Wildt, http://wildt.at.die-netzmacher.de/
  *
+ * BE AWARE: You have to enable Rotate Views in your Browser flexform.
+ * Else jQuery won't included probably: than you will get JSS errors!
+ * 
  */
 
 $( document ).ready( function( )
