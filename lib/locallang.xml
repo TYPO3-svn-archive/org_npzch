@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels for org_npzch</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="promptQuickstartBody"><![CDATA[
+        If you like to start with the Organiser +npz.ch modul immediately, start with the default configuration of the extension manager.
+        You have to take care of two items:
+        <br />
+        <br />
+        <ol>
+          <li>
+            Linking from a +npz.ch record to a record of another Organiser table is possible only, if the records are store in the same directory.
+          </li>
+          <li>
+            "Store record configuration" has set to [EASY]. Please check below.
+          </li>
+        </ol>
+         <br />
+       Have fun!
+      ]]></label>
+      <label index="promptGeneralInfo"><![CDATA[
+        All alignments in the extension manager effect the TYPO3 backend only.
+      ]]></label>
+      <label index="promptStoreRecordWarn"><![CDATA[
+        Your Organiser stores records
+        <ul style="list-style:outside;">
+          <li>
+            [###ORG_STORERECORD###]
+          </li>
+        </ul>
+        but your Organiser +npz.ch stores records
+        <ul style="list-style:outside;">
+          <li>
+            [###WKS_STORERECORD###]
+          </li>
+        </ul>
+        It is recommended to take the same configuration for both Organiser and Organiser +npz.ch.
+      ]]></label>
+      <label index="promptStoreRecordOk"><![CDATA[
+        Organiser and Organiser +npz.ch have the same configuration for storing records:
+        [###WKS_STORERECORD###]. The same configuration is recommended.
+      ]]></label>
+      <label index="promptSaveTwice"><![CDATA[
+        Please save your changing twice! Prompts will have a chance for updating.
+      ]]></label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="promptQuickstartBody"><![CDATA[
+        Wenn Du mit dem Organiser +npz.ch sofort starten m&ouml;chtest, dann arbeite mit den Standardeinstellungen des Extension
+        Managers. Du musst nur zwei Dinge beachten:
+        <br />
+        <br />
+        <ol>
+          <li>
+            Du kannst im Backend nur zwischen Datens&auml;tzen von +npz.ch zu anderen Organiser-Tabellen verlinken, die im selben Verzeichnis liegen.
+          </li>
+          <li>
+            "Store record configuration" muss auf [EASY] gesetzt sein (siehe unten).
+          </li>
+        </ol>
+        <br />
+        Viele Spa&szlig;!
+      ]]></label>
+      <label index="promptGeneralInfo"><![CDATA[
+        Alle Einstellungen im Extension Manager beeinflussen ausschlie&szlig;lich das TYPO3-Backend.
+      ]]></label>
+      <label index="promptStoreRecordWarn"><![CDATA[
+        Dein Organiser speichert Dateien so
+        <ul style="list-style:outside;">
+          <li>
+            [###ORG_STORERECORD###]
+          </li>
+        </ul>
+        aber Dein Organiser +npz.ch speichert diese so
+        <ul style="list-style:outside;">
+          <li>
+            [###WKS_STORERECORD###]
+          </li>
+        </ul>
+        Wir empfehlen f&uuml;r Organiser +npz.ch die gleiche Konfiguration wie beim Organiser - also
+        <strong>[###ORG_STORERECORD###]</strong>.
+      ]]></label>
+      <label index="promptStoreRecordOk"><![CDATA[
+        Organiser und Organiser +npz.ch haben die gleiche Konfiguration f&uuml;r das Speichern von
+        Datens&auml;tzen: [###WKS_STORERECORD###]. So ist es auch empfohlen.
+      ]]></label>
+      <label index="promptSaveTwice"><![CDATA[
+        Speichere Deine &Auml;nderungen bitte zwei Mal. Mitteilungen werden dann korrekt aktualisiert.
+      ]]></label>
+    </languageKey>
+  </data>
+</T3locallang>

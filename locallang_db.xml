@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'org_npzch'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="dummy.language">default</label>
+      <label index="filter_phrase.all">All</label>
+      <label index="filter_phrase.tx_org_headquarters">All companies</label>
+      <label index="filter_phrase.tx_org_npzch">All bookings</label>
+      <label index="filter_phrase.tx_org_npzch_capacity">All capacity</label>
+      <label index="filter_phrase.tx_org_npzch_cat">All categories</label>
+      <label index="filter_phrase.tx_org_npzch_place">All places</label>
+      <label index="filter_phrase.tx_org_npzch_types">All stati</label>
+
+      <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
+      <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
+
+      <label index="fe_users.div_tx_org_npzch">Bookings</label>
+      <label index="fe_users.tx_org_npzch">Bookings</label>
+      <label index="tx_org_cal.type.tx_org_npzch">Take it from the bookings table</label>
+      <label index="tx_org_cal.tx_org_npzch">Bookings</label>
+
+      <label index="tx_org_npzch">Bookings</label>
+      <label index="tx_org_npzch.div_booking">Booking</label>
+      <label index="tx_org_npzch.div_cal">Calendar</label>
+      <label index="tx_org_npzch.div_categories">Categories</label>
+      <label index="tx_org_npzch.div_fe_user">User</label>
+      <label index="tx_org_npzch.div_headquarter">Company</label>
+      <label index="tx_org_npzch.div_access">Access</label>
+      <label index="tx_org_npzch.div_seo">Search Engines</label>
+      <label index="tx_org_npzch.palette_appointment">Appointment</label>
+      <label index="tx_org_npzch.type">Status</label>
+      <label index="tx_org_npzch.type.booked">Booked</label>
+      <label index="tx_org_npzch.type.canceled">Canceled</label>
+      <label index="tx_org_npzch.type.reserved">Reserved</label>
+      <label index="tx_org_npzch.title">Label of the booking</label>
+      <label index="tx_org_npzch.short">Description</label>
+      <label index="tx_org_npzch.occasion">Occasion</label>
+      <label index="tx_org_npzch.datetime_start">Start</label>
+      <label index="tx_org_npzch.datetime_start.from">From start</label>
+      <label index="tx_org_npzch.datetime_start.to">To start</label>
+      <label index="tx_org_npzch.datetime_end">End</label>
+      <label index="tx_org_npzch.tx_org_npzch_capacity">Capacity</label>
+      <label index="tx_org_npzch.tx_org_npzch_cat">Category</label>
+      <label index="tx_org_npzch.tx_org_npzch_place">Place</label>
+      <label index="tx_org_npzch.fe_user">User</label>
+      <label index="tx_org_npzch.tx_org_cal">Calendar</label>
+
+      <label index="tx_org_npzch_capacity">Bookings: capacity</label>
+      <label index="tx_org_npzch_capacity.div_capacity">Capacity</label>
+      <label index="tx_org_npzch_capacity.div_access">Access</label>
+      <label index="tx_org_npzch_capacity.title">Capacity</label>
+      <label index="tx_org_npzch_capacity.value">Value (per cent)</label>
+      <label index="tx_org_npzch_capacity.tx_org_npzch">Bookings</label>
+      <label index="tx_org_npzch_cat">Bookings: categories</label>
+      <label index="tx_org_npzch_cat.div_cat">Category</label>
+      <label index="tx_org_npzch_cat.div_access">Access</label>
+      <label index="tx_org_npzch_cat.title">Category</label>
+      <label index="tx_org_npzch_cat.short">Initial</label>
+      <label index="tx_org_npzch_cat.tx_org_npzch">Bookings</label>
+      <label index="tx_org_npzch_place">Bookings: place</label>
+      <label index="tx_org_npzch_place.div_place">Place</label>
+      <label index="tx_org_npzch_place.div_access">Access</label>
+      <label index="tx_org_npzch_place.title">Place</label>
+      <label index="tx_org_npzch_place.short">Initial</label>
+      <label index="tx_org_npzch_place.tx_org_npzch">Bookings</label>
+
+      <label index="wizard.fe_user.add">Add a new frontend user</label>
+      <label index="wizard.fe_user.edit"> Edit the current frontend user</label>
+      <label index="wizard.fe_user.list">Display the frontend user table</label>
+      <label index="wizard.tx_org_cal.add">Add a new event</label>
+      <label index="wizard.tx_org_cal.edit"> Edit the current event</label>
+      <label index="wizard.tx_org_cal.list">Display the event table</label>
+      <label index="wizard.tx_org_headquarters.add">Add a new company</label>
+      <label index="wizard.tx_org_headquarters.edit"> Edit the current company</label>
+      <label index="wizard.tx_org_headquarters.list">Display the company table</label>
+      <label index="wizard.npzch.add">Add a new booking item</label>
+      <label index="wizard.npzch.edit"> Edit the current booking item</label>
+      <label index="wizard.npzch.list">Display the booking table</label>
+      <label index="wizard.npzch_capacity.add">Add a new capacity category</label>
+      <label index="wizard.npzch_capacity.edit"> Edit the current capacity category</label>
+      <label index="wizard.npzch_capacity.list">Display the capacity table</label>
+      <label index="wizard.npzch_cat.add">Add a new booking category</label>
+      <label index="wizard.npzch_cat.edit"> Edit the current booking category</label>
+      <label index="wizard.npzch_cat.list">Display the booking category table</label>
+      <label index="wizard.npzch_place.add">Add a new place category</label>
+      <label index="wizard.npzch_place.edit"> Edit the current placecategory</label>
+      <label index="wizard.npzch_place.list">Display the place table</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="dummy.language">de</label>
+
+      <label index="filter_phrase.all">Alle</label>
+      <label index="filter_phrase.tx_org_headquarters">Alle Firmen</label>
+      <label index="filter_phrase.tx_org_npzch">Alle Buchungen</label>
+      <label index="filter_phrase.tx_org_npzch_capacity">Alle Kapazitäten</label>
+      <label index="filter_phrase.tx_org_npzch_cat">Alle Kategorien</label>
+      <label index="filter_phrase.tx_org_npzch_place">Alle Plätze</label>
+      <label index="filter_phrase.tx_org_npzch_type">Alle Stati</label>
+
+      <label index="tca_phrase.description">Beschreibung für Suchmaschinen</label>
+      <label index="tca_phrase.keywords">Schlüsselworte für Suchmaschinen (mit Komma trennen)</label>
+
+      <label index="fe_users.div_tx_org_npzch">Buchungen</label>
+      <label index="fe_users.tx_org_npzch">Buchungen</label>
+      <label index="tx_org_cal.type.tx_org_npzch">Aus den Buchungen</label>
+      <label index="tx_org_cal.tx_org_npzch">Buchungen</label>
+
+      <label index="tx_org_npzch">Buchungen</label>
+      <label index="tx_org_npzch.div_booking">Buchung</label>
+      <label index="tx_org_npzch.div_cal">Kalender</label>
+      <label index="tx_org_npzch.div_categories">Kategorien</label>
+      <label index="tx_org_npzch.div_fe_user">Benutzer</label>
+      <label index="tx_org_npzch.div_headquarter">Firma</label>
+      <label index="tx_org_npzch.div_access">Steuerung</label>
+      <label index="tx_org_npzch.div_seo">Suchmaschinen</label>
+      <label index="tx_org_npzch.palette_appointment">Termin</label>
+      <label index="tx_org_npzch.type">Status</label>
+      <label index="tx_org_npzch.type.booked">Gebucht</label>
+      <label index="tx_org_npzch.type.canceled">Annuliert</label>
+      <label index="tx_org_npzch.type.reserved">Reserviert</label>
+      <label index="tx_org_npzch.title">Bezeichnung der Buchung</label>
+      <label index="tx_org_npzch.short">Kurzbeschreibung</label>
+      <label index="tx_org_npzch.occasion">Anlass</label>
+      <label index="tx_org_npzch.datetime_start">Beginn</label>
+      <label index="tx_org_npzch.datetime_start.from">Beginn (von)</label>
+      <label index="tx_org_npzch.datetime_start.to">Beginn (bis)</label>
+      <label index="tx_org_npzch.datetime_end">Ende</label>
+      <label index="tx_org_npzch.tx_org_npzch_capacity">Kapazität</label>
+      <label index="tx_org_npzch.tx_org_npzch_cat">Kategorie</label>
+      <label index="tx_org_npzch.tx_org_npzch_place">Platz</label>
+      <label index="tx_org_npzch.fe_user">Person</label>
+      <label index="tx_org_npzch.tx_org_cal">Kalender</label>
+
+      <label index="tx_org_npzch_capacity">Buchungen: Kapazitäten</label>
+      <label index="tx_org_npzch_capacity.div_capacity">Kapazität</label>
+      <label index="tx_org_npzch_capacity.div_access">Steuerung</label>
+      <label index="tx_org_npzch_capacity.title">Kapazität</label>
+      <label index="tx_org_npzch_capacity.value">Wert (in Prozent)</label>
+      <label index="tx_org_npzch_capacity.tx_org_npzch">Buchungen</label>
+      <label index="tx_org_npzch_cat">Buchungen: Kategorien</label>
+      <label index="tx_org_npzch_cat.div_cat">Kategorie</label>
+      <label index="tx_org_npzch_cat.div_access">Steuerung</label>
+      <label index="tx_org_npzch_cat.title">Kategorien</label>
+      <label index="tx_org_npzch_cat.short">Initial</label>
+      <label index="tx_org_npzch_cat.tx_org_npzch">Buchungen</label>
+      <label index="tx_org_npzch_place">Buchungen: Plätze</label>
+      <label index="tx_org_npzch_place.div_place">Platz</label>
+      <label index="tx_org_npzch_place.div_access">Steuerung</label>
+      <label index="tx_org_npzch_place.title">Platz</label>
+      <label index="tx_org_npzch_place.short">Initial</label>
+      <label index="tx_org_npzch_place.tx_org_npzch">Buchungen</label>
+
+      <label index="wizard.fe_user.add">Neuen Benutzer anlegen</label>
+      <label index="wizard.fe_user.edit"> Ausgewählten Benutzer bearbeiten</label>
+      <label index="wizard.fe_user.list">Tabelle mit Benutzer ansehen</label>
+      <label index="wizard.tx_org_cal.add">Neue Termin anlegen</label>
+      <label index="wizard.tx_org_cal.edit"> Ausgewählten Termin bearbeiten</label>
+      <label index="wizard.tx_org_cal.list">Tabelle mit Terminen anzeigen</label>
+      <label index="wizard.tx_org_headquarters.add">Neuen Firma anlegen</label>
+      <label index="wizard.tx_org_headquarters.edit"> Ausgewählte Firma bearbeiten</label>
+      <label index="wizard.tx_org_headquarters.list">Tabelle mit Firmen ansehen</label>
+      <label index="wizard.npzch.add">Neue Buchung anlegen</label>
+      <label index="wizard.npzch.edit"> Ausgewählte Buchung bearbeiten</label>
+      <label index="wizard.npzch.list">Tabelle mit Buchungen ansehen</label>
+      <label index="wizard.npzch_capacity.add">Neue Kapazität-Kategorie anlegen</label>
+      <label index="wizard.npzch_capacity.edit">Ausgewählte Kapazität-Kategorie bearbeiten</label>
+      <label index="wizard.npzch_capacity.list">Tabelle mit Kapazitäten ansehen</label>
+      <label index="wizard.npzch_cat.add">Neue Kategorie anlegen</label>
+      <label index="wizard.npzch_cat.edit"> Ausgewählte Kategorie bearbeiten</label>
+      <label index="wizard.npzch_cat.list">Tabelle mit Kategorien ansehen</label>
+      <label index="wizard.npzch_place.add">Neue Platz anlegen</label>
+      <label index="wizard.npzch_place.edit">Ausgewählten Platz bearbeiten</label>
+      <label index="wizard.npzch_place.list">Tabelle mit Plätzen ansehen</label>
+    </languageKey>
+  </data>
+</T3locallang>

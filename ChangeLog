@@ -1,0 +1,56 @@
+1.0.1
+  12-03-25
+  Bugfix
+  * foreach($TCA['fe_users'] in ext_tables.php
+  
+1.0.0
+  12-01-26
+  Maintanence
+  * Update for Browser version 4.0
+    Effected filed
+    * res/html/npzch/11083001/default.tmpl
+
+0.9.2
+  11-09-14
+  Development
+  * TypoScript and HTML-Template is adapted to the needs of the contractor
+  
+0.9.1
+  11-09-13
+  Development
+  * Integration of JavaScript into this extension and into the Browser
+  
+0.2.0
+  11-08-30
+  Development
+  * Adding CSV export
+
+0.1.0
+  11-08-29
+  Development
+  * sliding
+  
+0.0.4
+  11-08-19
+  Development
+  * Frontend
+    * Templating
+    * Calendar modul
+
+0.0.3
+  11-08-16
+  Development
+  * TCE form 2/2
+  * TCE form with filter
+    Integrating be_tablefields 0.9.1
+
+0.0.2
+  11-08-15
+  Development
+  * TCE form 1/2
+  * Replacing tx_org_npzch_status with type
+
+0.0.1
+  11-08-13
+  Initial Release
+  * Dirk Wildt  <http://wildt.at.die-netzmacher.de>
