@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
         npzch_export {
           name      = Organiser +npz.ch CSV export
           file      = EXT:org_npzch/res/html/npzch/11083001/default.tmpl
-          csvViews  = 11083001
+          csvViews  = 11083001, 11083002
         }
         calendar          >
         calendar_margin   >
@@ -617,6 +617,11 @@ plugin.tx_browser_pi1 {
             value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(DATE_SUB(DATE_FORMAT(CURDATE(), '%Y-%m-01 00:00:00'), INTERVAL 11 MONTH))
             noTrimWrap  = | | |
           }
+          20 = TEXT
+          20 {
+            value       = & tx_org_npzch_place.uid != {$plugin.tx_org_npzch_place.group_6.uid}
+            noTrimWrap  = | | |
+          }
         }
         orderBy = tx_org_npzch.datetime_start ASC
         tx_org_npzch {
@@ -700,6 +705,18 @@ plugin.tx_browser_pi1 {
               }
               order.field = uid
             }
+          }
+        }
+      }
+      11083002 < .11083001
+      11083002 = Organiser +npz.ch CSV export place general
+      11083002 {
+        name    = Organiser +npz.ch CSV export place general
+        andWhere {
+          20 = TEXT
+          20 {
+            value       = & tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_6.uid}
+            noTrimWrap  = | | |
           }
         }
       }
@@ -848,6 +865,11 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+      }
+      11083002 < .11083001
+      11083002 = Organiser +npz.ch CSV export place general
+      11083002 {
+        name = Organiser +npz.ch CSV export place general
       }
     }
   }
