@@ -24,7 +24,7 @@ plugin.tx_browser_pi1 {
         npzch {
           name      = Organiser +npz.ch
           file      = EXT:org_npzch/res/html/npzch/11081301/default.tmpl
-          csvViews  = 11081301, 11081302, 11081303, 11081304, 11081305, 11081306
+          csvViews  = 11081301, 11081302, 11081303, 11081304, 11081305, 11081306, 11081307
         }
         npzch_export {
           name      = Organiser +npz.ch CSV export
@@ -787,6 +787,7 @@ plugin.tx_browser_pi1 {
       11081304 < .11081301
       11081305 < .11081301
       11081306 < .11081301
+      11081307 < .11081301
       11083001 = Organiser +npz.ch CSV export
       11083001 {
         name    = Organiser +npz.ch CSV export
