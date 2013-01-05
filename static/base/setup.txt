@@ -75,6 +75,7 @@ plugin.tx_linkhandler {
   // Header Comment
 
 page.config.headerComment (
-        TYPO3-Programmierung: die-netzmacher.de
+        TYPO3-Programmierung: http://die-netzmacher.de/
+
 )
   // Header Comment

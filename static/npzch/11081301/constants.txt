@@ -35,4 +35,11 @@ plugin.tx_org_npzch_place {
   # cat=Org npz.ch place//152;       type=string;  label= Label of group 5 (german)
   group_5.lang.de = Sitzungszimmer
 
+  # cat=Org npz.ch place//160;       type=int+;    label= Id of group 6
+  group_6.uid = 8
+  # cat=Org npz.ch place//161;       type=string;  label= Label of group 6
+  group_6.lang.en = general
+  # cat=Org npz.ch place//162;       type=string;  label= Label of group 6 (german)
+  group_6.lang.de = Allgemein
+
 }

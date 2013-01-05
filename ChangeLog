@@ -1,6 +1,19 @@
+1.0.3
+  13-01-05
+  Improvement
+  * #44330: New place: general
+            Effected files:
+            * static
+              * base/constants.txt
+              * npzch/11081301/setup.txt
+
 1.0.2
   13-01-04
   Improvement
+  * #00000: filter.tx_org_npzch.datetime_start.count_hits is set to 0
+            Cause: else filter without an item won't displayed
+            Effected files:
+            * static/npzch/11081301/setup.txt
   * #00000: Improved comment
             Effected files:
             * /res/js/

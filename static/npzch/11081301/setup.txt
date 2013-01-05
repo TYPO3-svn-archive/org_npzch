@@ -553,6 +553,40 @@ plugin.tx_browser_pi1 {
           }
         }
       }
+      11081307 < .11081302
+      11081307 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_6.lang.de}
+      11081307 {
+        name = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_6.lang.de}
+        marker {
+          npz_title_date {
+            30 {
+              value   = {$plugin.tx_org_npzch_place.group_6.lang.en}
+              lang.de = {$plugin.tx_org_npzch_place.group_6.lang.de}
+            }
+          }
+        }
+        flexform {
+          pi5 {
+            day {
+              schedule {
+                labels {
+                  cal_date {
+                    stdWrap {
+                      value   = {$plugin.tx_org_npzch_place.group_6.lang.en}
+                      lang.de = {$plugin.tx_org_npzch_place.group_6.lang.de}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        andWhere {
+          20 {
+            value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_6.uid}
+          }
+        }
+      }
       11083001 = Organiser +npz.ch CSV export
       11083001 {
         name    = Organiser +npz.ch CSV export
@@ -825,6 +859,7 @@ plugin.tx_browser_pi1 {
       list_mode_11081304            = {$plugin.tx_org_npzch_place.group_3.lang.en}
       list_mode_11081305            = {$plugin.tx_org_npzch_place.group_4.lang.en}
       list_mode_11081306            = {$plugin.tx_org_npzch_place.group_5.lang.en}
+      list_mode_11081307            = {$plugin.tx_org_npzch_place.group_6.lang.en}
       list_mode_11081301_titleTag   = Organiser +npz.ch: bookings
       list_mode_11081301_keywords   = TYPO3, Organiser +npz.ch, bookings
       list_mode_11081301_summary    = TYPO3 Organiser +npz.ch: bookings
@@ -840,6 +875,7 @@ plugin.tx_browser_pi1 {
       list_mode_11081304            = {$plugin.tx_org_npzch_place.group_3.lang.de}
       list_mode_11081305            = {$plugin.tx_org_npzch_place.group_4.lang.de}
       list_mode_11081306            = {$plugin.tx_org_npzch_place.group_5.lang.de}
+      list_mode_11081307            = {$plugin.tx_org_npzch_place.group_6.lang.de}
       list_mode_11081301_titleTag   = Organiser +npz.ch: Buchungen
       list_mode_11081301_keywords   = TYPO3, Organiser +npz.ch, Buchungen
       list_mode_11081301_summary    = TYPO3 Organiser +npz.ch: Buchungen
