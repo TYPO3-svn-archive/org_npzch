@@ -1,10 +1,17 @@
-1.0.3
+1.1.0
   13-01-05
   Improvement
   * #44330: New place: general (with export)
             Effected files:
             * static
               * base/constants.txt
+              * npzch/11081301/setup.txt
+  * #00000: List view without phonenumber
+            Single view without phonenumber
+            * static
+              * npzch/11081301/setup.txt
+  * #00000: Single with title and without short
+            * static
               * npzch/11081301/setup.txt
 
 1.0.2

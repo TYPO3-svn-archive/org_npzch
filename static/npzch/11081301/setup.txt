@@ -176,8 +176,7 @@ plugin.tx_browser_pi1 {
           tx_org_npzch_capacity.value,
           tx_org_npzch_cat.short,
           fe_users.first_name,
-          fe_users.last_name,
-          fe_users.telephone
+          fe_users.last_name
         )
         andWhere = COA
         andWhere {
@@ -221,7 +220,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -233,7 +232,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = &Oslash;
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -254,7 +253,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -266,7 +265,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = &Oslash;
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -287,7 +286,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -299,7 +298,7 @@ plugin.tx_browser_pi1 {
                 }
                 value = &Oslash;
                 typolink {
-                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###]"
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
                   additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
                 }
               }
@@ -392,26 +391,26 @@ plugin.tx_browser_pi1 {
           type {
             10 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
             }
             20 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
             }
             30 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###, ###FE_USERS.TELEPHONE###
+                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
               }
             }
           }
@@ -748,11 +747,9 @@ plugin.tx_browser_pi1 {
       11081301 {
         select (
           tx_org_npzch.title,
-          tx_org_npzch.short,
           tx_org_npzch.occasion,
           fe_users.first_name,
           fe_users.last_name,
-          fe_users.telephone,
           tx_org_npzch.type,
           tx_org_npzch.datetime_start,
           tx_org_npzch.datetime_end,
@@ -779,6 +776,11 @@ plugin.tx_browser_pi1 {
               strftime  = %H:%M
               wrap      = <div class="datetime_end">|</div>
             }
+          }
+          title = TEXT
+          title {
+            value = ###TX_ORG_NPZCH.TITLE###
+            wrap  = |
           }
           type = COA
           type {
