@@ -617,10 +617,23 @@ plugin.tx_browser_pi1 {
             value       = tx_org_npzch.datetime_start >= UNIX_TIMESTAMP(DATE_SUB(DATE_FORMAT(CURDATE(), '%Y-%m-01 00:00:00'), INTERVAL 11 MONTH))
             noTrimWrap  = | | |
           }
-          20 = TEXT
+          20 = COA
           20 {
-            value       = & tx_org_npzch_place.uid != {$plugin.tx_org_npzch_place.group_6.uid}
-            noTrimWrap  = | | |
+            10 = TEXT
+            10 {
+              if {
+                isFalse {
+                  data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
+                }
+              }
+              value       = &
+              noTrimWrap  = | | |
+            }
+            20 = TEXT
+            20 {
+              value       = tx_org_npzch_place.uid != {$plugin.tx_org_npzch_place.group_6.uid}
+              noTrimWrap  = | | |
+            }
           }
         }
         orderBy = tx_org_npzch.datetime_start ASC
@@ -713,10 +726,10 @@ plugin.tx_browser_pi1 {
       11083002 {
         name    = Organiser +npz.ch CSV export place general
         andWhere {
-          20 = TEXT
           20 {
-            value       = & tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_6.uid}
-            noTrimWrap  = | | |
+            20 {
+              value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_6.uid}
+            }
           }
         }
       }
