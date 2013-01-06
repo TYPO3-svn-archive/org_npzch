@@ -777,11 +777,6 @@ plugin.tx_browser_pi1 {
               wrap      = <div class="datetime_end">|</div>
             }
           }
-          title = TEXT
-          title {
-            value = ###TX_ORG_NPZCH.TITLE###
-            wrap  = |
-          }
           type = COA
           type {
               // Booked
