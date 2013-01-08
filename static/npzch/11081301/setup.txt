@@ -391,26 +391,26 @@ plugin.tx_browser_pi1 {
           type {
             10 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE### 
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE###
               }
             }
             20 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE###
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE###
               }
             }
             30 {
               10 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE###
               }
               20 {
-                value = ###TX_ORG_NPZCH_CAT.SHORT### ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###: ###TX_ORG_NPZCH.TITLE###
               }
             }
           }
@@ -551,6 +551,40 @@ plugin.tx_browser_pi1 {
             value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_5.uid}
           }
         }
+        tx_org_npzch {
+          type {
+            10 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
+            20 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
+            30 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
+          }
+        }
       }
       11081307 < .11081302
       11081307 = Organiser +npz.ch - {$plugin.tx_org_npzch_place.group_6.lang.de}
@@ -583,6 +617,40 @@ plugin.tx_browser_pi1 {
         andWhere {
           20 {
             value = tx_org_npzch_place.uid = {$plugin.tx_org_npzch_place.group_6.uid}
+          }
+        }
+        tx_org_npzch {
+          type {
+            10 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
+            20 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
+            30 {
+              10 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+              20 {
+                  // 130108
+                value = ###TX_ORG_NPZCH_CAT.SHORT###
+              }
+            }
           }
         }
       }
