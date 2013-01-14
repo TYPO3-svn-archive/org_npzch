@@ -304,6 +304,8 @@ plugin.tx_browser_pi1 {
               }
               wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
             }
+              // Don't display canceled bookings
+            30 >
           }
         }
         filter {
@@ -573,15 +575,39 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
               }
             }
+              // Canceled
+            30 = COA
             30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+                // Category is given
+              10 = TEXT
               10 {
+                if {
+                  isTrue = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
                   // 130108
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
               }
+                // Category isn't given
+              20 = TEXT
               20 {
-                  // 130108
-                value = ###TX_ORG_NPZCH_CAT.SHORT###
+                if {
+                  isFalse = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = &Oslash;
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
               }
+              wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
             }
           }
         }
@@ -641,15 +667,39 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
               }
             }
+              // Canceled
+            30 = COA
             30 {
+              if {
+                value = ###TX_ORG_NPZCH.TYPE###
+                equals = canceled
+              }
+                // Category is given
+              10 = TEXT
               10 {
+                if {
+                  isTrue = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
                   // 130108
                 value = ###TX_ORG_NPZCH_CAT.SHORT###
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
               }
+                // Category isn't given
+              20 = TEXT
               20 {
-                  // 130108
-                value = ###TX_ORG_NPZCH_CAT.SHORT###
+                if {
+                  isFalse = ###TX_ORG_NPZCH_CAT.SHORT###
+                }
+                value = &Oslash;
+                typolink {
+                  parameter         = ###SINGLEPID### - "linktosingle invert" "header=[###TX_ORG_NPZCH_PLACE.TITLE###, ###CAL_DATE_START###-###CAL_DATE_END###] body=[###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###]"
+                  additionalParams  = &tx_browser_pi1[npzchUid]=###TX_ORG_NPZCH.UID###
+                }
               }
+              wrap  = <div style="background:###CAL_COLOUR###;float:left;position:relative;width:###TX_ORG_NPZCH_CAPACITY.VALUE###%;">|</div>
             }
           }
         }

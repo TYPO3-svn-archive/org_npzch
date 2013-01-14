@@ -1,3 +1,13 @@
+1.1.2
+  13-01-14
+  Customisation
+  * #00000: cafeteria and website
+            Don't display canceled bookings
+            views: 11081301-11081305
+            Effected files:
+            * static
+              * npzch/11081301/setup.txt
+
 1.1.1
   13-01-08
   Customisation
