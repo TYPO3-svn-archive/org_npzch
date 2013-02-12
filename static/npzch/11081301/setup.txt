@@ -196,12 +196,12 @@ plugin.tx_browser_pi1 {
           datetime_start = TEXT
           datetime_start {
             value     = ###TX_ORG_NPZCH.DATETIME_START###
-            strftime  = %H:%M
+            strftime  = %a. %d. %b. %H:%M
           }
           datetime_end = TEXT
           datetime_end {
             value     = ###TX_ORG_NPZCH.DATETIME_END###
-            strftime  = %H:%M
+            strftime  = %a. %d. %b. %H:%M
           }
           type = COA
           type {
@@ -891,7 +891,7 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               value     = ###TX_ORG_NPZCH.DATETIME_END###
-              strftime  = %H:%M
+              strftime  = %a. %d. %b. %H:%M
               wrap      = <div class="datetime_end">|</div>
             }
           }
