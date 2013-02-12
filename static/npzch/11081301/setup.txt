@@ -882,7 +882,7 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               value     = ###TX_ORG_NPZCH.DATETIME_START###
-              strftime  = %a. %d. %b. %H:%M
+              strftime  = %a. %d.%b.%y %H:%M
               wrap      = <div class="datetime_start">|</div>
             }
           }
@@ -891,7 +891,7 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               value     = ###TX_ORG_NPZCH.DATETIME_END###
-              strftime  = %a. %d. %b. %H:%M
+              strftime  = %a. %d.%b.%y %H:%M
               wrap      = <div class="datetime_end">|</div>
             }
           }
