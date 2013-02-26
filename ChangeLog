@@ -1,3 +1,10 @@
+1.1.5
+  13-02-22
+  Feature
+  * #45846: Controlling JSS alerts
+            Effected files:
+            * res/js/slide-0.0.3.js
+
 1.1.4
   13-02-13
   Bugfix
