@@ -1,3 +1,10 @@
+1.1.6
+  13-02-28
+  Bugfix
+  * #45910: MYSQL CURDATE( ) + 1 -> DATE_ADD( CURDATE( ), INTERVAL 1 DAY)
+            Effected files:
+            * static/npzch/11081301/setup.txt
+
 1.1.5
   13-02-22
   Feature

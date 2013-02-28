@@ -187,7 +187,7 @@ plugin.tx_browser_pi1 {
                 data = GP:tx_browser_pi1|tx_org_npzch.datetime_start
               }
             }
-            value       = (tx_org_npzch.datetime_start <= UNIX_TIMESTAMP(CONCAT(DATE(CURDATE() + 1),' 00:00:00')) AND tx_org_npzch.datetime_end >= UNIX_TIMESTAMP(CONCAT(DATE(CURDATE() + 0),' 00:00:00')))
+            value       = (tx_org_npzch.datetime_start <= UNIX_TIMESTAMP(CONCAT(DATE(DATE_ADD( CURDATE( ), INTERVAL 1 DAY)),' 00:00:00')) AND tx_org_npzch.datetime_end >= UNIX_TIMESTAMP(CONCAT(DATE(CURDATE( )),' 00:00:00')))
             noTrimWrap  = | | |
           }
         }
