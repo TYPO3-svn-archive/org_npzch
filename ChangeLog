@@ -1,3 +1,10 @@
+1.1.7
+  13-03-07
+  Bugfix
+  * #i0001: foreach with wrong parameters
+            Effected files:
+            * tca.php
+
 1.1.6
   13-02-28
   Bugfix

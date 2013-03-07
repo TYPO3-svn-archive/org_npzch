@@ -654,7 +654,7 @@
   $TCA['tx_org_npzch']['columns']['fe_user']['config_filter']['maxitems'] = 1;
   $TCA['tx_org_npzch']['columns']['fe_user']['config_filter']['size']     = 1;
   $items = array ('-99' => array ( '0' => '', '1' => '' ));
-  foreach($TCA['tx_org_npzch']['columns']['fe_user']['config']['items'] as $key => $arrValue)
+  foreach( ( array ) $TCA['tx_org_npzch']['columns']['fe_user']['config']['items'] as $key => $arrValue)
   {
     $items[$key] = $arrValue;
   }
@@ -668,7 +668,7 @@
   $TCA['tx_org_npzch']['columns']['type']['config_filter'] =
     $TCA['tx_org_npzch']['columns']['type']['config'];
   $items = array ('-99' => array ( '0' => '', '1' => '' ));
-  foreach($TCA['tx_org_npzch']['columns']['type']['config']['items'] as $key => $arrValue)
+  foreach( ( array ) $TCA['tx_org_npzch']['columns']['type']['config']['items'] as $key => $arrValue)
   {
     $items[$key] = $arrValue;
   }
